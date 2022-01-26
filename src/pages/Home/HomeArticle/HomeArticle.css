@@ -1,0 +1,18 @@
+.article-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.pagination {
+  margin: 30px auto;
+}
+.pagination button {
+  margin-right: 10px;
+  padding: 0 10px;
+  border: none;
+}
+.pagination .selected {
+  background-color: rgb(63, 63, 240);
+  color: white;
+  border: none;
+}
