@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import Footer from "../../Shared/Footer/Footer";
 import Navigation from "../../Shared/Navigation/Navigation";
 import "./Login.css";
 
@@ -113,6 +114,7 @@ const Login = () => {
           </span>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -5,7 +5,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 const Slide = ({ active, carousel }) => {
   const { title1, title2, description, img } = carousel;
   return (
-    <div classNameName={`carousel-item ${active ? "active" : ""} carousel-img`}>
+    <div className={`carousel-item ${active ? "active" : ""} carousel-img`}>
       <img
         // src={`data:image/jpeg;base64,${img}`}
         src={img}

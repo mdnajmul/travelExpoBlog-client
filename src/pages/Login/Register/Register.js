@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import Footer from "../../Shared/Footer/Footer";
 import Navigation from "../../Shared/Navigation/Navigation";
 
 const Register = () => {
@@ -147,6 +148,7 @@ const Register = () => {
           </span>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
