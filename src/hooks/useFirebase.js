@@ -31,7 +31,7 @@ const useFirebase = () => {
         const newUser = { email, displayName: name };
         setUser(newUser);
         // save user to the database
-        //saveUser(email, name, "POST");
+        saveUser(email, name, "POST");
         // send name to firebase after creation
         updateProfile(auth.currentUser, {
           displayName: name,
@@ -69,7 +69,7 @@ const useFirebase = () => {
       .then((result) => {
         const user = result.user;
         sessionStorage.setItem("email", user.email);
-        //saveUser(user.email, user.displayName, user.phoneNumber, "PUT");
+        saveUser(user.email, user.displayName, user.phoneNumber, "PUT");
         setAuthError("");
         // Redirect user to the page where they come from
         redirectInitialPage(navigate, location);
@@ -104,16 +104,16 @@ const useFirebase = () => {
     return () => unsubscribe;
   }, [auth]);
 
-  //   const saveUser = (email, displayName, phoneNumber, method) => {
-  //     const user = { email, displayName, phoneNumber };
-  //     fetch("https://serene-citadel-54805.herokuapp.com/users", {
-  //       method: method,
-  //       headers: {
-  //         "content-type": "application/json",
-  //       },
-  //       body: JSON.stringify(user),
-  //     }).then();
-  //   };
+  const saveUser = (email, displayName, phoneNumber, method) => {
+    const user = { email, displayName, phoneNumber };
+    fetch("https://mighty-savannah-90389.herokuapp.com/users", {
+      method: method,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    }).then();
+  };
 
   // Redirect Initial Page
   const redirectInitialPage = (navigate, location) => {
