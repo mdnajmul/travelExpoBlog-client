@@ -9,11 +9,25 @@ const TopSpotDetail = () => {
   let { spotId } = useParams();
   const [topSpot, setTopSpot] = useState({});
 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
+    setLoading(true);
     fetch(`https://mighty-savannah-90389.herokuapp.com/top-spots/${spotId}`)
       .then((res) => res.json())
-      .then((data) => setTopSpot(data));
+      .then((data) => {
+        setTopSpot(data);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center mt-5">
+        <div className="spinner-border text-primary"></div>
+      </div>
+    );
+  }
 
   const {
     _id,
@@ -34,7 +48,9 @@ const TopSpotDetail = () => {
     <>
       <Navigation />
       <section className="container mt-3">
-        <h2 className="text-center text-success fw-bold mt-100">{name}</h2>
+        <h2 className="text-center fw-bold mt-100" style={{ color: "#B77323" }}>
+          {name}
+        </h2>
 
         <div className="img-detail">
           <div>
@@ -77,7 +93,7 @@ const TopSpotDetail = () => {
               <span className="text-primary fw-bold">{catagory}</span>
             </p>
             <p>
-              {rating && <Rating name="read-only" value={rating} readOnly />}
+              <Rating name="read-only" value={rating} readOnly />
             </p>
           </div>
         </div>

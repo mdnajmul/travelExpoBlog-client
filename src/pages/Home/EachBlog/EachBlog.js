@@ -5,8 +5,7 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import "./EachBlog.css";
 
 const EachBlog = (props) => {
-  const { id, title, image, details, location, expense, rating, date, writer } =
-    props.post;
+  const { _id, title, image, details, date, writer } = props.post;
   return (
     <div className="card">
       <div className="d-flex justify-content-between px-3 pt-2">
@@ -27,7 +26,7 @@ const EachBlog = (props) => {
         <h5 className="card-title fw-bold">{title}</h5>
         <p className="card-text">{details.slice(0, 200)}...</p>
         <p>
-          <NavLink to="">
+          <NavLink to={`/blogs/${_id}`}>
             <button
               className="fst-italic border-0 fw-bold readmore-btn"
               style={{
