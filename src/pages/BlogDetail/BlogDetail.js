@@ -28,18 +28,11 @@ const BlogDetail = () => {
     );
   }
 
-  const {
-    _id,
-    title,
-    image,
-    details,
-    location,
-    expense,
-    date,
-    writer,
-    rating,
-  } = singleBlog;
+  const { title, image, details, location, expense, date, writer, rating } =
+    singleBlog;
 
+  let cost = parseInt(expense);
+  let star = parseInt(rating);
   return (
     <>
       <Navigation />
@@ -79,9 +72,9 @@ const BlogDetail = () => {
             </p>
             <p>
               <span className="text-info fw-bold">Total Expense: </span>
-              <span className="text-danger fw-bold">BDT {expense}</span>
+              <span className="text-danger fw-bold">BDT {cost}</span>
             </p>
-            <Rating name="read-only" value={rating} readOnly />
+            <Rating name="read-only" value={star} readOnly />
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import AuthProvider from "./context/AuthProvider";
 import BlogDetail from "./pages/BlogDetail/BlogDetail";
+import CreateBlogPost from "./pages/CreateBlogPost/CreateBlogPost";
 import Home from "./pages/Home/Home/Home";
 import Login from "./pages/Login/Login/Login";
 import Register from "./pages/Login/Register/Register";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/addblog" element={<CreateBlogPost />} />
           <Route path="/top-spots/:spotId" element={<TopSpotDetail />} />
           <Route path="/blogs/:blogId" element={<BlogDetail />} />
           <Route path="*" element={<PageNotFound />} />

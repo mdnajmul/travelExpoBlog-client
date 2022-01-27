@@ -35,15 +35,16 @@ const Navigation = () => {
             <Link to="/home" className="nav-link topic">
               Home
             </Link>
-            <li class="nav-item">
-              <Link to="/about-us" className="nav-link topic">
-                About Us
-              </Link>
-            </li>
 
             <li class="nav-item">
               <Link to="/allblogs" className="nav-link topic">
                 All Blogs
+              </Link>
+            </li>
+
+            <li class="nav-item">
+              <Link to="/addblog" className="nav-link topic">
+                Write Travel Experience
               </Link>
             </li>
 
