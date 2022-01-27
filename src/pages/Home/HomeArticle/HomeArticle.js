@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import EachBlog from "../EachBlog/EachBlog";
+import TopTourSpot from "../TopTourSpot/TopTourSpot";
 import "./HomeArticle.css";
 
 const HomeArticle = () => {
   const [blogs, setBlogs] = useState([]);
+  const [topSpots, setTopSpots] = useState([]);
+
   const [loading, setLoading] = useState(false);
 
   // blogs to be rendered on the UI
@@ -30,6 +33,17 @@ const HomeArticle = () => {
       });
   }, [page]);
 
+  //Get all services
+  useEffect(() => {
+    setLoading(true);
+    fetch("https://mighty-savannah-90389.herokuapp.com/top-spots")
+      .then((res) => res.json())
+      .then((data) => {
+        setTopSpots(data);
+        setLoading(false);
+      });
+  }, []);
+
   if (loading) {
     return (
       <div className="d-flex justify-content-center align-items-center mt-5">
@@ -38,12 +52,14 @@ const HomeArticle = () => {
     );
   }
 
+  const displaySpots = topSpots.slice(0, 10);
+
   return (
     <div className="container mt-5">
-      <div class="row">
-        <div class="col-md-8 col-lg-10 col-12">
+      <div className="row">
+        <div className="col-md-8 col-lg-10 col-12">
           {displayBlogs?.map((post) => (
-            <EachBlog key={post.id} post={post} />
+            <EachBlog key={post._id} post={post} />
           ))}
           <div className="pagination">
             {[...Array(pageCount).keys()].map((number) => (
@@ -57,7 +73,20 @@ const HomeArticle = () => {
             ))}
           </div>
         </div>
-        <div class="col-md-4 col-lg-2 col-12">col-4</div>
+        <div
+          className="col-md-4 col-lg-2 col-12"
+          style={{ background: "#ebedf0", padding: "5px" }}
+        >
+          <div>
+            <h5 className="text-center fw-bold" style={{ color: "#205213" }}>
+              Top Tour Spot
+            </h5>
+          </div>
+          <hr />
+          {displaySpots?.map((spot) => (
+            <TopTourSpot key={spot._id} spot={spot} />
+          ))}
+        </div>
       </div>
     </div>
   );

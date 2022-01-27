@@ -1,0 +1,28 @@
+.tour {
+  display: flex;
+  margin-right: 5px;
+  padding-bottom: 5px;
+}
+.tour-name {
+  color: #b77323;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.img-field {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.tour-details {
+  margin-left: 8px;
+}
+
+.icon-color {
+  color: gold;
+}
+
+.bottom-border {
+  border-bottom: 1px solid lightgray;
+}
