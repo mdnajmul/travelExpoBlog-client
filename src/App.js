@@ -8,6 +8,7 @@ import Login from "./pages/Login/Login/Login";
 import Register from "./pages/Login/Register/Register";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import TopSpotDetail from "./pages/TopSpotDetail/TopSpotDetail";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -18,9 +19,16 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/addblog" element={<CreateBlogPost />} />
           <Route path="/top-spots/:spotId" element={<TopSpotDetail />} />
           <Route path="/blogs/:blogId" element={<BlogDetail />} />
+          <Route
+            path="/addblog"
+            element={
+              <PrivateRoute>
+                <CreateBlogPost />
+              </PrivateRoute>
+            }
+          />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

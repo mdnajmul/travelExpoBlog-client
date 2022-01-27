@@ -7,15 +7,14 @@ import Navigation from "../../Shared/Navigation/Navigation";
 import "./Login.css";
 
 const Login = () => {
-  const { authError, isLoading, signInWithGoogle, loginWithEmailAndPassword } =
-    useAuth();
+  const { authError, isLoading, signInUsingGoogle, loginUser } = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
 
   // handle google sign in
   const handleGoogleSignIn = () => {
-    signInWithGoogle(navigate, location);
+    signInUsingGoogle(navigate, location);
   };
 
   // React hook form
@@ -26,7 +25,7 @@ const Login = () => {
   } = useForm();
   const onSubmit = (data) => {
     // Login user using email and passworld
-    loginWithEmailAndPassword(data.email, data.password, navigate, location);
+    loginUser(data.email, data.password, navigate, location);
     console.log(data);
   };
   return (

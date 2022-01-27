@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Welcom to [TravelExpoBlog](https://travelexpoblog.web.app/), Travel Agency Copmany's Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the first and largest website about travel agency in Bangladesh. We have started our journey since 25th January 2019. We have experienced and hard working team and our prime goal is to provide best place where the travelers can share their experience with others.
 
-## Available Scripts
+Click this link to visit the live website: [https://travelexpoblog.web.app/](https://travelexpoblog.web.app/).
 
-In the project directory, you can run:
+Here is the [backend repository](https://github.com/mdnajmul/travelExpoBlog-server) and live backend [https://mighty-savannah-90389.herokuapp.com/](https://mighty-savannah-90389.herokuapp.com/) hosted on heroku.
 
-### `npm start`
+## Technology Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React, Firebase, React Router, NodeJS, ExpressJS, MongoDB, Bootstrap, Material UI etc.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About [TravelExpoBlog](https://travelexpoblog.web.app/)
 
-### `npm test`
+- This project is based on an online travel agency & fully responsive.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Users need to log in via Google or Email/Password (also create a new account).
 
-### `npm run build`
+- Have admin and user/client dashboard. Admin can post new blog articles, Add a field to add a travel related image, manage all users/clients blog post, make new admin for the site, Add a field to add title.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- For admin featured testing, log in via using email: test@test.com & password: #2021dev
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- User/client can post their travel experienc, can see all posted blogs, give reviews, etc.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- An `admin` Manage any user's post, and `make another user an Admin`.
 
-### `npm run eject`
+- I have used `Context API` for state management and APIs request handle.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Admin Login Info
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Please use the following email and password to login as an Admin. You can't see the Admin Dashboard without login as an Admin.
+- Email: test@test.com
+- Password: #2021dev

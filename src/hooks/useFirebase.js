@@ -28,10 +28,10 @@ const useFirebase = () => {
       .then((userCredential) => {
         sessionStorage.setItem("email", email);
         setAuthError("");
-        const newUser = { email, displayName: name };
+        const newUser = { email, displayName: name, phoneNumber: null };
         setUser(newUser);
         // save user to the database
-        saveUser(email, name, "POST");
+        saveUser(email, name, null, "POST");
         // send name to firebase after creation
         updateProfile(auth.currentUser, {
           displayName: name,
