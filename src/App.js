@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home/Home";
 import Login from "./pages/Login/Login/Login";
 import Register from "./pages/Login/Register/Register";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import TopSpotDetail from "./pages/TopSpotDetail/TopSpotDetail";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/top-spots/:spotId" element={<TopSpotDetail />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

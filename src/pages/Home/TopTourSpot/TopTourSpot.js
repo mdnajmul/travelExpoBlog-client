@@ -5,7 +5,7 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import "./TopTourSpot.css";
 
 const TopTourSpot = (props) => {
-  const { name, img, price, rating } = props.spot;
+  const { _id, name, img, price, rating } = props.spot;
   return (
     <>
       <div className="tour mt-3">
@@ -26,7 +26,7 @@ const TopTourSpot = (props) => {
         </div>
       </div>
       <p className="bottom-border pb-3 text-center">
-        <NavLink to="">
+        <NavLink to={`/top-spots/${_id}`}>
           <button
             className="fst-italic border-0 fw-bold readmore-btn"
             style={{
