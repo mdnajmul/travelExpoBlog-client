@@ -17,7 +17,7 @@ const EachBlog = (props) => {
         </p>
       </div>
       <img
-        src={image}
+        src={`data:image/png;base64,${image}`}
         style={{ height: "250px", padding: "10px" }}
         className="img-fluid card-img-top"
         alt=""

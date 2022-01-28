@@ -42,7 +42,7 @@ const BlogDetail = () => {
             <img
               style={{ width: "100%" }}
               className="img-fluid"
-              src={image}
+              src={`data:image/png;base64,${image}`}
               alt=""
             />
           </div>
