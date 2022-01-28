@@ -43,13 +43,16 @@ const ManagePost = () => {
   const [allBlogs, setAllBlogs] = useState([]);
   const [rating, setRating] = useState(null);
   const [reload, setReload] = useState(false);
+  const [loading, setLoading] = useState(false);
   let i = 1;
 
   useEffect(() => {
+    setLoading(true);
     fetch(`https://mighty-savannah-90389.herokuapp.com/allblogs`)
       .then((res) => res.json())
       .then((data) => {
         setAllBlogs(data);
+        setLoading(false);
       });
   }, [reload]);
 
@@ -156,6 +159,13 @@ const ManagePost = () => {
       >
         All Travel Experience Blogs
       </Typography>
+
+      {loading && (
+        <div className="d-flex justify-content-center align-items-center mt-5">
+          <div className="spinner-border text-primary"></div>
+        </div>
+      )}
+
       {allBlogs.length > 0 && (
         <TableContainer component={Paper}>
           <Table aria-label="simple table">
