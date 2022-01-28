@@ -10,7 +10,6 @@ import Footer from "../Shared/Footer/Footer";
 
 const CreateBlogPost = () => {
   const { user } = useAuth();
-  // React Hook Form
 
   const [rating, setRating] = useState(null);
 
