@@ -20,8 +20,22 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/top-spots/:spotId" element={<TopSpotDetail />} />
-          <Route path="/blogs/:blogId" element={<BlogDetail />} />
+          <Route
+            path="/top-spots/:spotId"
+            element={
+              <PrivateRoute>
+                <TopSpotDetail />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/blogs/:blogId"
+            element={
+              <PrivateRoute>
+                <BlogDetail />
+              </PrivateRoute>
+            }
+          />
           <Route
             path="/addblog"
             element={
