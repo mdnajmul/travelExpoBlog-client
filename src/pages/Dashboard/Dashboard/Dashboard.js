@@ -19,10 +19,20 @@ const drawerWidth = 200;
 
 const Dashboard = (props) => {
   const { user } = useAuth();
-  let admin = false;
-  if (user?.role === "admin") {
-    admin = true;
-  }
+  const [admin, setAdmin] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const email = sessionStorage.getItem("email");
+
+  React.useEffect(() => {
+    setLoading(true);
+    fetch(`https://mighty-savannah-90389.herokuapp.com/users/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAdmin(data.admin);
+        sessionStorage.setItem("admin", data.admin);
+        setLoading(false);
+      });
+  }, [email]);
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -30,9 +40,17 @@ const Dashboard = (props) => {
     setMobileOpen(!mobileOpen);
   };
 
+  //   Loading Spinner
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center mt-5">
+        <div className="spinner-border text-primary"></div>
+      </div>
+    );
+  }
   const drawer = (
     <div>
-      <NavLink to="/" style={{ cursor: "pointer" }}>
+      <NavLink to="/" style={{ cursor: "pointer", textDecoration: "none" }}>
         <Typography
           variant="h6"
           component="div"
@@ -40,7 +58,7 @@ const Dashboard = (props) => {
         >
           <span
             style={{
-              color: "white",
+              color: "#622A87",
               fontWeight: "bold",
               fontSize: "24px",
             }}

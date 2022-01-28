@@ -3,6 +3,7 @@ import "./App.css";
 import AuthProvider from "./context/AuthProvider";
 import BlogDetail from "./pages/BlogDetail/BlogDetail";
 import CreateBlogPost from "./pages/CreateBlogPost/CreateBlogPost";
+import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import Home from "./pages/Home/Home/Home";
 import Login from "./pages/Login/Login/Login";
 import Register from "./pages/Login/Register/Register";
@@ -26,6 +27,14 @@ function App() {
             element={
               <PrivateRoute>
                 <CreateBlogPost />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/dashboard/*"
+            element={
+              <PrivateRoute>
+                <Dashboard />
               </PrivateRoute>
             }
           />

@@ -5,7 +5,6 @@ import AddIcon from "@mui/icons-material/Add";
 import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
 import AppsIcon from "@mui/icons-material/Apps";
 import LogoutIcon from "@mui/icons-material/Logout";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MessageIcon from "@mui/icons-material/Message";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import { makeStyles } from "@material-ui/core";
@@ -23,11 +22,30 @@ const useStyles = makeStyles(() => ({
 }));
 
 const SidebarNavigation = () => {
-  const { user, logOut } = useAuth();
+  const { logOut } = useAuth();
   const classes = useStyles();
-  let admin = false;
-  if (user?.role === "admin") {
-    admin = true;
+  const [admin, setAdmin] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const email = sessionStorage.getItem("email");
+
+  React.useEffect(() => {
+    setLoading(true);
+    fetch(`https://mighty-savannah-90389.herokuapp.com/users/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAdmin(data.admin);
+        sessionStorage.setItem("admin", data.admin);
+        setLoading(false);
+      });
+  }, [email]);
+
+  //   Loading Spinner
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center mt-5">
+        <div className="spinner-border text-primary"></div>
+      </div>
+    );
   }
   return (
     <Box>

@@ -4,11 +4,8 @@ import useAuth from "../../../hooks/useAuth";
 
 const AdminRoute = ({ children }) => {
   const { user, isLoading } = useAuth();
+  const admin = sessionStorage.getItem("admin");
   const location = useLocation();
-  let admin = false;
-  if (user?.role === "admin") {
-    admin = true;
-  }
 
   //   Loading Spinner
   if (isLoading) {
